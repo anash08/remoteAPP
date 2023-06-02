@@ -24,6 +24,9 @@ app.set('port', port);
 
 const server = http.createServer(app);
 
+const browser = await puppeteer.launch();
+
+
 /**
  * Listen on provided port, on all network interfaces.
  */
