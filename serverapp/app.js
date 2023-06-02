@@ -5,12 +5,15 @@ const logger = require('morgan');
 
 const app = express();
 
+const staticPath = process.env.STATIC_PATH || '/home/user/Desktop/remoteapp/client/build';
+const indexPath = path.join(staticPath, 'index.html');
+
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "client",  'build')));
+app.use(express.static(staticPath));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, "client", 'build', 'index.html'));
+  res.sendFile(indexPath);
 });
 
 // Catch 404 and forward to error handler
