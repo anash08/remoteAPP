@@ -24,7 +24,19 @@ app.set('port', port);
 
 const server = http.createServer(app);
 
-const browser = puppeteer.launch();
+async function myFunction() {
+  // Other code...
+  
+  const browser = await puppeteer.launch();
+
+  // Use `await` for asynchronous operations within this function
+  // ...
+
+  await browser.close();
+}
+
+// Call the async function
+myFunction();
 
 
 /**
