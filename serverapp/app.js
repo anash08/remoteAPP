@@ -5,6 +5,9 @@ const logger = require('morgan');
 
 const app = express();
 
+// Set the environment variable NODE_VERSION
+process.env.NODE_VERSION = '18.16.0';
+
 const staticPath = process.env.STATIC_PATH || '/home/user/Desktop/remoteapp/client/build';
 const indexPath = path.join(staticPath, 'index.html');
 
